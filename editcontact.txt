@@ -1,0 +1,29 @@
+ public void EditContact(string firstName, string lastName)
+ {
+     for (int i = 0; i < contactCount; i++)
+     {
+         if (contacts[i].FirstName.Equals(firstName, StringComparison.OrdinalIgnoreCase) && contacts[i].LastName.Equals(lastName, StringComparison.OrdinalIgnoreCase))
+         {
+             Console.WriteLine($"Editing contact: {firstName} {lastName}");
+             Console.Write("Enter new address: ");
+             contacts[i].Address = Console.ReadLine();
+
+             Console.Write("Enter new city: ");
+             contacts[i].City = Console.ReadLine();
+
+             Console.Write("Enter new zip: ");
+             contacts[i].Zip = Console.ReadLine();
+
+             Console.Write("Enter new phone number: ");
+             contacts[i].PhoneNumber = Console.ReadLine();
+
+             Console.Write("Enter new email: ");
+             contacts[i].Email = Console.ReadLine();
+
+             Console.WriteLine("Contact updated successfully!");
+             return;
+         }
+     }
+
+     Console.WriteLine($"Contact with name {firstName} {lastName} not found.");
+ }
