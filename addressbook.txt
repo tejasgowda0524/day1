@@ -1,0 +1,32 @@
+public class AddressBook
+{
+    private const int MaxContacts = 10;
+    private ContactPerson[] contacts = new ContactPerson[MaxContacts];
+    private int contactCount = 0;
+
+    public void AddContact(string firstName, string lastName, string address, string city, string zip, string phoneNumber, string email)
+    {
+        if (contactCount < MaxContacts)
+        {
+            ContactPerson newContact = new ContactPerson
+            {
+                FirstName = firstName,
+                LastName = lastName,
+                Address = address,
+                City = city,
+                Zip = zip,
+                PhoneNumber = phoneNumber,
+                Email = email
+            };
+
+            contacts[contactCount] = newContact;
+            contactCount++;
+
+            Console.WriteLine("Contact added successfully!");
+        }
+        else
+        {
+            Console.WriteLine("Address book is full. Cannot add more contacts.");
+        }
+    }
+}
