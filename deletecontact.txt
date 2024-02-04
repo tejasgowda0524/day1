@@ -1,0 +1,30 @@
+    public void DeleteContact(string firstName, string lastName)
+    {
+        for (int i = 0; i < contactCount; i++)
+        {
+            if (contacts[i].FirstName.Equals(firstName, StringComparison.OrdinalIgnoreCase) && contacts[i].LastName.Equals(lastName, StringComparison.OrdinalIgnoreCase))
+            {
+                Console.WriteLine($"Deleting contact: {firstName} {lastName}");
+                for (int j = i; j < contactCount - 1; j++)
+                {
+                    contacts[j] = contacts[j + 1];
+                }
+                contactCount--;
+
+                Console.WriteLine("Contact deleted successfully!");
+                return;
+            }
+        }
+
+        Console.WriteLine($"Contact with name {firstName} {lastName} not found.");
+    }
+
+    public void DisplayContacts()
+    {
+        Console.WriteLine("Address Book Contacts:");
+        for (int i = 0; i < contactCount; i++)
+        {
+            contacts[i].DisplayDetails();
+        }
+    }
+}
