@@ -1,0 +1,26 @@
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        AddressBook myAddressBook = new AddressBook();
+
+        
+        myAddressBook.AddContact("John", "Doe", "123 Main St", "Cityville", "12345", "555-1234", "john.doe@email.com");
+        myAddressBook.AddContact("Jane", "Smith", "456 Oak Ave", "Townsville", "67890", "555-5678", "jane.smith@email.com");
+
+       
+        myAddressBook.DisplayContacts();
+
+       
+        myAddressBook.EditContact("John", "Doe");
+
+        
+        myAddressBook.DisplayContacts();
+
+        
+        myAddressBook.DeleteContact("Jane", "Smith");
+
+        
+        myAddressBook.DisplayContacts();
+    }
+}
